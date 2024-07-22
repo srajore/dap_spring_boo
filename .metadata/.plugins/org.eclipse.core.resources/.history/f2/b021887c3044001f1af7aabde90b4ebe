@@ -1,0 +1,5 @@
+package com.zensar.spring_core.config;
+
+public class JavaConfig {
+
+}

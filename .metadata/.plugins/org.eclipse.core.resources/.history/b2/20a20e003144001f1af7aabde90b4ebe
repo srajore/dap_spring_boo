@@ -1,0 +1,16 @@
+package com.zensar.spring_core.config;
+
+import org.springframework.context.annotation.Configuration;
+
+import com.zensar.spring_core.beans.Person;
+
+@Configuration
+public class JavaConfig {
+	
+	
+	
+	public Person person() {
+		return new Person(1, "Ram", 28);
+	}
+
+}

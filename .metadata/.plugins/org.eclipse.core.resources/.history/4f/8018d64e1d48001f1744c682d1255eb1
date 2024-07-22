@@ -1,0 +1,5 @@
+spring.application.name=spring-boot-app-ide
+
+server.port=9090
+
+logging.level.com.zensar.spring_boot_app_ide.controller=off

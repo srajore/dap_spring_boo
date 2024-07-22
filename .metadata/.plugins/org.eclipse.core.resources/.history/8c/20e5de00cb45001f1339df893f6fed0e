@@ -1,0 +1,9 @@
+package com.zensar.spring_boot_app_ide.dto;
+
+public class ProductDto {
+	
+	private int productId;
+	private String productName;
+	private double productCost;
+
+}
