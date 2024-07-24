@@ -24,7 +24,7 @@ public class ProductController {
 	// {RequestMethod.GET,RequestMethod.POST})
 
 	@GetMapping(value = "/product/{productId}")
-	public ProductDto getProduct(@PathVariable int id) {
+	public ProductDto getProduct(@PathVariable("productId") int id) {
 		return productService.getProduct(id);
 	}
 
