@@ -19,15 +19,17 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	public ProductDto getProduct(int productId) {
-		return productRepository.getProduct(productId);
+		return productRepository.findById(productId).get();  //not a good practice
+		//return productRepository.getById(productId);   it's dep. method getById()
 	}
 
 	public List<ProductDto> getAllProducts() {
-		return productRepository.getAllProducts();
+		return productRepository.findAll();
 	}
 
 	public ProductDto insertProduct(ProductDto productDto) {
-		productRepository.insertProduct(productDto);
+		productRepository.save(productDto);
+		
 		return productDto;
 	}
 

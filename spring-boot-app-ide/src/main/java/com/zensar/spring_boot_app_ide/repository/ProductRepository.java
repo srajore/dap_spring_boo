@@ -1,15 +1,10 @@
 package com.zensar.spring_boot_app_ide.repository;
 
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.zensar.spring_boot_app_ide.dto.ProductDto;
-
-public interface ProductRepository {
-	
-	public ProductDto getProduct(int productId);
-	
-	public List<ProductDto> getAllProducts();
-	
-	public ProductDto insertProduct(ProductDto productDto);
+//@Repository
+public interface ProductRepository extends JpaRepository<ProductDto, Integer> {
 
 }

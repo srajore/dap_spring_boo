@@ -1,0 +1,11 @@
+package com.zensar.spring_boot_app_ide.repository;
+
+import java.util.List;
+
+import com.zensar.spring_boot_app_ide.dto.ProductDto;
+
+public interface ProductRepository {
+	
+	
+
+}

@@ -1,0 +1,8 @@
+spring.application.name=spring-boot-app-ide
+
+#server.port=9090
+
+#logging.level.org.springframework=debug
+
+
+spring.h2.console.path=/h2
