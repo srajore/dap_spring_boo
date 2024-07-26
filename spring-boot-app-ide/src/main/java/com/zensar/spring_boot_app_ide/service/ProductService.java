@@ -8,9 +8,13 @@ public interface ProductService {
 	
 	public ProductDto getProduct(int productId);
 	
+	public List<ProductDto> getProduct(String productname);
+	
 	public List<ProductDto> getAllProducts();
 	
 	public ProductDto insertProduct(ProductDto productDto);
+	
+	//public List<ProductDto> getProduct(String productname,double productCost);
 	
 	
 	

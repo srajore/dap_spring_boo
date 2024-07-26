@@ -22,11 +22,22 @@ public class ProductController {
 
 	// @RequestMapping(value = "/product",method =
 	// {RequestMethod.GET,RequestMethod.POST})
-
+	//http://localhost:8080/product/1
 	@GetMapping(value = "/product/{productId}")
 	public ProductDto getProduct(@PathVariable("productId") int id) {
 		return productService.getProduct(id);
 	}
+	
+	//http://localhost:8080/product/test
+	@GetMapping(value = "/product/name/{productName}")
+	public List<ProductDto> getProductByItsName(@PathVariable("productName") String productName) {
+		return productService.getProduct(productName);
+	}
+	
+	/*@GetMapping(value = "/product/name/{productName}/{productCost}")
+	public List<ProductDto> getProductByItsName(@PathVariable("productName") String productName,@PathVariable("productCost") double productCost) {
+		return productService.getProduct(productName,productCost);
+	}*/
 
 	@GetMapping(value = "/product")
 	public List<ProductDto> getAllProducts() {
