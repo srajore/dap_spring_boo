@@ -3,6 +3,8 @@ package com.zensar.spring_boot_app_ide.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -44,11 +46,18 @@ public class ProductController {
 		return productService.getAllProducts();
 	}
 
-	@PostMapping("/product")
+	@PostMapping(value = "/product")
+	public ResponseEntity<ProductDto> insertProduct(@RequestBody ProductDto productDto) {
+		return new ResponseEntity<ProductDto>(productService.insertProduct(productDto), HttpStatus.CREATED);
+	}
+	
+	
+	/*@PostMapping(value = "/product")
+	@ResponseStatus(code = HttpStatus.CREATED)
 	public ProductDto insertProduct(@RequestBody ProductDto productDto) {
 		productService.insertProduct(productDto);
 		return productDto;
-	}
+	}*/
 
 	// update
 

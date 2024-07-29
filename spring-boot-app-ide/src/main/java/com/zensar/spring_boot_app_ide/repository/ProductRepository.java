@@ -19,5 +19,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 	List<Product>test(@Param("name")String productName); 
 	
 	//List<Product>test(String productName,double productCost); 
+	
+	
 
 }

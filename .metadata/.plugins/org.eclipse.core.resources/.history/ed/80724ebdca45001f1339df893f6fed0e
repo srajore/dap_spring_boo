@@ -1,5 +1,0 @@
-package com.zensar.spring_boot_app_ide.controller;
-
-public class ProductController {
-
-}
