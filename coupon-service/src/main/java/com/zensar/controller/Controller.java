@@ -19,9 +19,7 @@ import com.zensar.dto.CouponDto;
 import com.zensar.service.CouponService;
 
 @RestController
-@RequestMapping(value = "/coupon-api", produces = { MediaType.APPLICATION_JSON_VALUE,
-		MediaType.APPLICATION_XML_VALUE }, consumes = { MediaType.APPLICATION_JSON_VALUE,
-				MediaType.APPLICATION_XML_VALUE })
+@RequestMapping(value = "/coupon-api")
 public class Controller {
 	@Autowired
 	private CouponService couponService;
@@ -32,7 +30,7 @@ public class Controller {
 	}*/
 	
 	@GetMapping("/coupons/{couponCode}")
-	public ResponseEntity<CouponDto> getCoupon(@PathVariable("couponId") String couponCode) {
+	public ResponseEntity<CouponDto> getCoupon(@PathVariable("couponCode") String couponCode) {
 		return new ResponseEntity<>(couponService.getCoupon(couponCode),HttpStatus.OK);
 	}
 
@@ -53,9 +51,10 @@ public class Controller {
 		
 	}
 
-	@DeleteMapping("/coupons")
-	public ResponseEntity<String> deleteCoupon(@PathVariable("coupodId") int couponId) {
-		couponService.deleteCoupon(couponId);
-		return new ResponseEntity<String>("Coupon Deleted Successfully..!!!", HttpStatus.OK);
+	@DeleteMapping("/coupons/{id}")
+	public void deleteCoupon(@PathVariable("id") int id) {
+		System.out.println("ID "+id);
+		couponService.deleteCoupon(id);
+		//return new ResponseEntity<String>("Coupon Deleted Successfully..!!!", HttpStatus.OK);
 	}
 }
