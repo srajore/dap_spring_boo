@@ -1,5 +1,7 @@
 package com.zensar.spring_boot_app_ide.dto;
 
+import java.io.Serializable;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +12,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 
-public class ProductDto {
+public class ProductDto implements Serializable {
 	
 	
 	private int productId;
