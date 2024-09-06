@@ -10,6 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.zensar.dto.CouponDto;
 import com.zensar.entity.Product;
+import com.zensar.restclient.RestClient;
 import com.zensar.services.ProductService;
 
 @RestController
@@ -19,8 +20,11 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 
+	//@Autowired
+	//private RestTemplate restTemplate;
+	
 	@Autowired
-	private RestTemplate restTemplate;
+	private RestClient  restClient;
 
 	@PostMapping("/product")
 	public Product insertProduct(@RequestBody Product product) {
@@ -30,9 +34,13 @@ public class ProductController {
 	//	ResponseEntity<CouponDto> coupon = restTemplate
 	//			.getForEntity("http://localhost:8083/coupon-api/coupons/" + couponCode, CouponDto.class);
 		
-		ResponseEntity<CouponDto> coupon = restTemplate
-				.getForEntity("http://COUPON-SERVICE:8083/coupon-api/coupons/" + couponCode, CouponDto.class);
+		//ResponseEntity<CouponDto> coupon = restTemplate
+		//		.getForEntity("http://COUPON-SERVICE/coupon-api/coupons/" + couponCode, CouponDto.class);
+		
+		ResponseEntity<CouponDto> coupon = restClient.getCoupon(product.getCouponCode());
 
+		//CouponDto dto = coupon.getBody();
+		
 		CouponDto dto = coupon.getBody();
 		product.setPrice(product.getPrice() - 50);
 

@@ -76,6 +76,9 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\JavaBackend\api-gateway"/>
+			<item value="D:\JavaBackend\product-service"/>
+			<item value="D:\JavaBackend\coupon-service"/>
 			<item value="D:\JavaBackend\spring-boot-app"/>
 		</list>
 		<list key="projectNameTemplate">

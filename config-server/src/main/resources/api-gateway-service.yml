@@ -1,0 +1,23 @@
+
+server:
+  cloud:
+    gateway:
+      routes:
+      - id: product-service
+        uri: lb://PRODUCT-SERVICE
+        predicates:
+        - Path=/product-api/**
+      - id: coupon-service
+        uri: lb://COUPON-SERVICE
+        predicates:
+        - Path=//coupon-api/**
+    discovery:
+      enabled: true 
+      
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+      
+    propagation:
+      type: b3  

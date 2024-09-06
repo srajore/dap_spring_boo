@@ -31,6 +31,9 @@ public class Controller {
 	
 	@GetMapping("/coupons/{couponCode}")
 	public ResponseEntity<CouponDto> getCoupon(@PathVariable("couponCode") String couponCode) {
+		
+		System.out.println("Response from Instance 2");
+		
 		return new ResponseEntity<>(couponService.getCoupon(couponCode),HttpStatus.OK);
 	}
 
